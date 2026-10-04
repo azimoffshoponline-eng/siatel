@@ -380,7 +380,7 @@ summary{font-size:17px}details p{font-size:15px}.contact-copy>p{font-size:16px}.
 
     var ctrl = window.AbortController ? new AbortController() : null;
     var timer = setTimeout(function () { if (ctrl) { ctrl.abort(); } }, 15000);
-    fetch('send.php', { method: 'POST', body: d, headers: { 'Accept': 'application/json' }, signal: ctrl ? ctrl.signal : undefined })
+    fetch('https://oboi106.ru/siatel-form/send.php', { method: 'POST', body: d, headers: { 'Accept': 'application/json' }, signal: ctrl ? ctrl.signal : undefined })
       .then(function (r) { return r.json().catch(function () { return {}; }).then(function (j) { return { status: r.status, j: j }; }); })
       .then(function (res) {
         if (res.j && res.j.ok) {
